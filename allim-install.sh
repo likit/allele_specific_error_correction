@@ -1,5 +1,6 @@
-# apt-get update -y
-# apt-get upgrade -y
+##### Upgrade packages #####
+apt-get update -y
+apt-get upgrade -y
 
 ##### Install R 2.15.0 #####
 cd
@@ -41,10 +42,10 @@ ln -s /usr/local/bin/gsnap /usr/local/bin/GSNAP
 cd
 apt-get install -y python-biopython
 
-# cd /mnt
-# wget https://allim.googlecode.com/files/Allim_1.0.tar.gz
-# tar xvfz Allim_1.0.tar.gz
-# cd /mnt/Allim_1.0
-# mkdir test_data/
-# cd /mnt/Allim_1.0/test_data/
-# sh ~/download-test-data.sh
+cd /mnt/ebs
+wget https://allim.googlecode.com/files/Allim_1.0.tar.gz
+tar xvfz Allim_1.0.tar.gz
+cd /mnt/ebs/Allim_1.0
+mkdir test_data/
+cd /mnt/ebs/Allim_1.0/test_data/
+sh ~/download-test-data.sh
