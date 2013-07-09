@@ -48,4 +48,4 @@ tar xvfz Allim_1.0.tar.gz
 cd /mnt/ebs/Allim_1.0
 mkdir test_data/
 cd /mnt/ebs/Allim_1.0/test_data/
-sh ~/download-test-data.sh
+sh download-test-data.sh
