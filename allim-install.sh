@@ -1,7 +1,8 @@
+# apt-get update -y
+# apt-get upgrade -y
+
 ##### Install R 2.15.0 #####
 cd
-apt-get update -y
-apt-get upgrade -y
 apt-get build-dep -y r-base
 wget http://cran.mtu.edu/bin/linux/ubuntu/precise/r-base_2.15.0.orig.tar.gz
 tar vxfz r-base_2.15.0.orig.tar.gz 
@@ -13,7 +14,7 @@ make install
 ##### Install required R packages and Rpy2 #####
 cd
 R CMD BATCH install-R-packages.R install.log
-get -O rpy2-2.2.0.tar.gz http://sourceforge.net/projects/rpy/files/rpy2/2.2.x/rpy2-2.2.0.tar.gz/download
+wget -O rpy2-2.2.0.tar.gz http://sourceforge.net/projects/rpy/files/rpy2/2.2.x/rpy2-2.2.0.tar.gz/download
 tar xvfz rpy2-2.2.0.tar.gz
 cd rpy2-2.2.0/
 python setup.py build
