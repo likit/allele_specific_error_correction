@@ -14,7 +14,7 @@ make install
 
 ##### Install required R packages and Rpy2 #####
 cd
-R CMD BATCH install-R-packages.R install.log
+R CMD BATCH /root/allele_specific_error_correction/install-R-packages.R install.log
 wget -O rpy2-2.2.0.tar.gz http://sourceforge.net/projects/rpy/files/rpy2/2.2.x/rpy2-2.2.0.tar.gz/download
 tar xvfz rpy2-2.2.0.tar.gz
 cd rpy2-2.2.0/
@@ -48,4 +48,4 @@ tar xvfz Allim_1.0.tar.gz
 cd /mnt/ebs/Allim_1.0
 mkdir test_data/
 cd /mnt/ebs/Allim_1.0/test_data/
-sh download-test-data.sh
+sh /root/allele_specific_error_correction/download-test-data.sh
