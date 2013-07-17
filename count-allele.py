@@ -12,7 +12,9 @@ def parse_snps(snpfile):
         ksnp = cols[4]  # known snp
         csnp = cols[12]  # called snp
         info = cols[16]
-    yield SnpObj(snpid, ref, ksnp, csnp, info)
+        if csnp == ".":
+            continue
+        yield SnpObj(snpid, ref, ksnp, csnp, info)
 
 
 def count(snp):
@@ -23,15 +25,12 @@ def count(snp):
     ref1, ref2, snp1, snp2 = infos[4].split("=")[1].split(",")
     ref_count = int(ref1) + int(ref2)
     snp_count = int(snp1) + int(snp2)
-    yield id, ref_count, snp_count
+    return id, ref_count, snp_count
 
-
-def write_count(count):
-    return
 
 def main():
     try:
-        snpfile = open(sys.argv[2])
+        snpfile = open(sys.argv[1])
     except IOError:
         print >> sys.stderr, "Cannot open %s, please check." % sys.argv[2]
         raise SystemExit
