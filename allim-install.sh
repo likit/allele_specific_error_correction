@@ -42,10 +42,13 @@ ln -s /usr/local/bin/gsnap /usr/local/bin/GSNAP
 cd
 apt-get install -y python-biopython
 
-cd /mnt/ebs
+cd /mnt/data
 wget https://allim.googlecode.com/files/Allim_1.0.tar.gz
 tar xvfz Allim_1.0.tar.gz
-cd /mnt/ebs/Allim_1.0
+cd /mnt/data/Allim_1.0
 mkdir test_data/
-cd /mnt/ebs/Allim_1.0/test_data/
+cd /mnt/data/Allim_1.0/test_data/
 sh /root/allele_specific_error_correction/download-test-data.sh
+
+##### Run this if Allim.py fails because of libR.so not found #####
+export LD_LIBRARY_PATH=/usr/local/lib/R/lib/
